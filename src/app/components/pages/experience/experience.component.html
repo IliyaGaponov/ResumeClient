@@ -1,0 +1,21 @@
+
+<div class="experience-wrapper">
+    <h1>Job Experience</h1>
+    <div class="timeline">
+        <div class="timeline-el" *ngFor="let job of jobs;let i = index">
+            <div class="timeline-el-content">
+                <h4>{{job.companyName}}</h4>
+                <h5>{{job.name}}</h5>
+                <div class="job-desc" *ngFor="let desc of job.description">
+                    {{desc}}
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="job-icon"><img src={{job.iconUrl}} alt=""></div>
+            <div class="job-date">
+                {{job.startDate | date: 'MMMM yyyy'}} - {{job.finishDate | date: 'MMMM yyyy'}}
+            </div>
+        </div>
+    </div>
+</div>

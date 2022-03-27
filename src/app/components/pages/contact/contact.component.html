@@ -1,0 +1,43 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate> 
+    <label>
+      <p class="label-txt">ENTER YOUR EMAIL</p>
+      <input type="email" class="input" formControlName="email">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+      <div class="alert alert-danger" *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched">
+        email is incorrect
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER YOUR FIRST NAME</p>
+      <input type="text" class="input" formControlName="firstName">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+      <div class="alert alert-danger" *ngIf="contactForm.controls['firstName'].invalid && contactForm.controls['firstName'].touched">
+        first name should include only letters
+      </div>
+    </label>
+    <label>
+        <p class="label-txt">ENTER YOUR LAST NAME</p>
+        <input type="text" class="input" formControlName="lastName">
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+        <div class="alert alert-danger" *ngIf="contactForm.controls['lastName'].invalid && contactForm.controls['lastName'].touched">
+          last name should include only letters
+        </div>
+      </label>
+    <label>
+      <p class="label-txt">ENTER YOUR PHONE</p>
+      <input type="text" class="input" formControlName="phone">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+      <div class="alert alert-danger" *ngIf="contactForm.controls['phone'].invalid && contactForm.controls['phone'].touched">
+        phone is incorrect
+      </div>
+    </label>
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+  </form>

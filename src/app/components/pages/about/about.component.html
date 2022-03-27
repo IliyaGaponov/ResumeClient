@@ -1,0 +1,15 @@
+<div class="triangle-bgr"></div>
+<div class="prof-img">   
+    <img src="/assets/images/me2.jpg" alt="">
+</div>
+<div class="about-me-wrapper">
+    <h2>
+        <div class="smaller">{{descriptions[currDescIndex].small}}</div>
+        <div class="bigger">{{descriptions[currDescIndex].big}}</div>
+    </h2>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" [style.width.%]="progress"></div>
+    </div>
+    <div class="desc">{{descriptions[currDescIndex].desc}}</div>
+    <button class="btn btn-primary" routerLink='{{descriptions[currDescIndex].btnLink}}'>{{descriptions[currDescIndex].button}}</button>
+</div>
